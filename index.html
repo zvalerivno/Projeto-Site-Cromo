@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cromo (Cr) - Trabalho Interdisciplinar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b1014; /* Tom escuro baseado na referência Azzaro */
+            color: #9ca3af;
+            scroll-behavior: smooth;
+        }
+        html { scroll-behavior: smooth; }
+        section[id] { scroll-margin-top: 72px; }
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Efeito para mesclar imagens com fundo preto na tela escura */
+        .mix-blend-screen {
+            mix-blend-mode: screen;
+        }
+        /* Quando uma imagem não carrega, o espaço continua bonito e identificado */
+        .img-missing {
+            background: linear-gradient(135deg, #1a222b 0%, #0d1217 60%, #1f2937 100%);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .img-missing::after {
+            content: attr(data-label);
+            color: #4b5563; font-size: 11px; letter-spacing: .15em;
+            text-transform: uppercase; text-align: center; padding: 1rem;
+        }
+        /* Ocultar barra de rolagem mas manter funcionalidade */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0b1014; }
+        ::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #374151; }
+        a:focus-visible, button:focus-visible { outline: 1px solid #fff; outline-offset: 4px; }
+    </style>
+</head>
+<body class="antialiased selection:bg-gray-700 selection:text-white">
+
+    <!-- CABEÇALHO: nome à esquerda, logo ao centro, menu à direita -->
+    <header class="fixed top-0 w-full grid grid-cols-3 items-center px-6 md:px-8 py-6 z-50 mix-blend-difference">
+        <div>
+            <a href="#fontes" class="text-[11px] uppercase tracking-widest text-gray-400 hover:text-white transition-colors hidden md:inline">Diego Valeriano da Silva (Nº 11)</a>
+        </div>
+
+        <h1 class="text-white text-xl md:text-2xl font-serif tracking-[0.3em] uppercase text-center">Cromo</h1>
+
+        <div class="flex items-center justify-end">
+            <nav class="hidden 2xl:flex gap-6 text-[11px] uppercase tracking-widest text-gray-400">
+                <a href="#hero" class="hover:text-white transition-colors">Início</a>
+                <a href="#caracteristicas" class="hover:text-white transition-colors">Características</a>
+                <a href="#historia" class="hover:text-white transition-colors">História</a>
+                <a href="#cotidiano" class="hover:text-white transition-colors">Uso</a>
+                <a href="#riscos" class="hover:text-white transition-colors">Riscos</a>
+            </nav>
+            <button id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuMobile" class="2xl:hidden text-2xl text-gray-400 hover:text-white focus:outline-none">≡</button>
+        </div>
+    </header>
+
+    <!-- Menu mobile -->
+    <div id="menuMobile" class="hidden fixed inset-0 z-40 bg-[#0b1014]/95 backdrop-blur-sm pt-28 px-8">
+        <nav class="flex flex-col gap-6 text-sm uppercase tracking-widest text-gray-300">
+            <a href="#hero" class="menu-link">Início</a>
+            <a href="#caracteristicas" class="menu-link">Características</a>
+            <a href="#historia" class="menu-link">História</a>
+            <a href="#cotidiano" class="menu-link">Uso</a>
+            <a href="#riscos" class="menu-link">Riscos</a>
+            <a href="#docentes" class="menu-link">Docentes</a>
+            <a href="#fontes" class="menu-link">Fontes</a>
+        </nav>
+    </div>
+
+    <!-- HERO SECTION (Capa baseada na referência) -->
+    <section id="hero" class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <!-- Texto Gigante no Fundo -->
+        <div class="absolute z-0 font-serif text-[18vw] text-white/[0.03] tracking-wider select-none whitespace-nowrap">
+            CROMO
+        </div>
+
+        <!-- Imagem Central do Elemento -->
+        <div class="z-10 relative mt-12 w-64 h-64 md:w-[400px] md:h-[400px]">
+            <!-- Sugestão: Use uma imagem PNG sem fundo de um pedaço de metal cromo aqui. 
+                 Como placeholder, estou usando uma imagem realista de metal com filtro para mesclar -->
+            <img src="images/CromoHero.png" 
+                 alt="Amostra de Metal Cromo" 
+                 class="w-full h-full object-cover rounded-xl  opacity-90 transition-transform duration-700 hover:scale-105">
+        </div>
+    </section>
+
+    <!-- SEÇÃO A: PRINCIPAIS CARACTERÍSTICAS -->
+    <section id="caracteristicas" class="py-24 px-8 md:px-20 max-w-7xl mx-auto border-t border-white/5">
+        <h2 class="text-3xl font-serif text-white mb-12">A. Principais Características</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+            <ul class="space-y-6 text-sm font-light text-gray-400">
+                <li class="flex justify-between gap-6 border-b border-white/5 pb-2">
+                    <span class="text-gray-500 uppercase tracking-widest text-[10px] pt-1">Nome e Símbolo</span>
+                    <span class="text-gray-200 text-right">Cromo (Cr) - Nº Atômico Z=24</span>
+                </li>
+                <li class="flex justify-between gap-6 border-b border-white/5 pb-2">
+                    <span class="text-gray-500 uppercase tracking-widest text-[10px] pt-1">Estado Físico</span>
+                    <span class="text-gray-200 text-right">Sólido (25 °C, 1 atm)</span>
+                </li>
+                <li class="flex justify-between gap-6 border-b border-white/5 pb-2">
+                    <span class="text-gray-500 uppercase tracking-widest text-[10px] pt-1">Aparência</span>
+                    <span class="text-gray-200 text-right max-w-[220px]">Metálico, prateado-acinzentado e altamente brilhante</span>
+                </li>
+                <li class="flex justify-between gap-6 border-b border-white/5 pb-2">
+                    <span class="text-gray-500 uppercase tracking-widest text-[10px] pt-1">Massa Atômica</span>
+                    <span class="text-gray-200 text-right">51,996 u</span>
+                </li>
+                <li class="flex justify-between gap-6 border-b border-white/5 pb-2">
+                    <span class="text-gray-500 uppercase tracking-widest text-[10px] pt-1">Fusão / Ebulição</span>
+                    <span class="text-gray-200 text-right">1.907 °C / 2.671 °C</span>
+                </li>
+                <li class="pt-4 text-gray-400 leading-relaxed">
+                    <strong class="text-white block mb-1">Propriedades Principais:</strong>
+                    Alta dureza (8,5 na escala Mohs), capacidade de passivação superficial contra ferrugem, condutividade térmica e elétrica moderadas.
+                </li>
+            </ul>
+
+            <figure class="text-center">
+                <div class="img-holder w-full max-w-sm mx-auto aspect-square rounded-lg bg-white/5 p-8 mb-4 overflow-hidden" data-label="Distribuição eletrônica do Cromo">
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Electron_shell_024_Chromium.svg?width=800"
+                         data-local="images/cromo-eletrons.png" onerror="imgFail(this)"
+                         alt="Representação das camadas eletrônicas do Cromo"
+                         class="w-full h-full object-contain mix-blend-screen opacity-80">
+                </div>
+                <figcaption class="text-[10px] text-gray-600 uppercase tracking-wider">Figura 1: Camadas eletrônicas do elemento Cromo (Cr). Fonte: https://crqsp.org.br/tabelaperiodica</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- SEÇÕES B e C: HISTÓRIA E OCORRÊNCIA -->
+    <section id="historia" class="py-24 px-8 md:px-20 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center mb-24 md:mb-32">
+            <div>
+                <h2 class="text-2xl font-serif text-white mb-6">B. História da Descoberta</h2>
+                <p class="text-sm font-light leading-relaxed mb-4">
+                    O elemento cromo foi descoberto em 1797 pelo químico francês Louis-Nicolas Vauquelin. A descoberta ocorreu enquanto analisava o "chumbo vermelho da Sibéria" (crocoíta).
+                </p>
+                <p class="text-sm font-light leading-relaxed">
+                    Ao tratar o mineral com ácido clorídrico, isolou o óxido de cromo. O nome "Cromo" deriva do grego <em>Chroma</em> (cor), devido à grande variedade de cores vivas apresentadas pelos seus compostos.
+                </p>
+            </div>
+            <figure>
+                <div class="img-holder h-64 md:h-80 rounded-sm overflow-hidden" data-label="Mineral Crocoíta">
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Crocoite_from_the_Dundas_extended_mine,_Dundas,_Tasmania,_Australia.jpg?width=800"
+                         data-local="images/crocoita.jpg" onerror="imgFail(this)"
+                         alt="Mineral Crocoíta" loading="lazy"
+                         class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700 opacity-60 hover:opacity-100">
+                </div>
+                <figcaption class="text-[10px] text-gray-600 mt-2 text-right">Mineral Crocoíta - Wikimedia Commons</figcaption>
+            </figure>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center">
+            <figure class="order-2 md:order-1">
+                <div class="img-holder h-64 md:h-80 rounded-sm overflow-hidden" data-label="Minério Cromita">
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chromite-201529.jpg?width=800"
+                         data-local="images/cromita.jpg" onerror="imgFail(this)"
+                         alt="Minério Cromita" loading="lazy"
+                         class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700 opacity-60 hover:opacity-100">
+                </div>
+                <figcaption class="text-[10px] text-gray-600 mt-2">Minério Cromita - Wikimedia Commons</figcaption>
+            </figure>
+            <div class="order-1 md:order-2">
+                <h2 class="text-2xl font-serif text-white mb-6">C. Ocorrência na Natureza</h2>
+                <p class="text-sm font-light leading-relaxed mb-4">
+                    O cromo é o 21º elemento mais abundante na crosta terrestre. Devido à sua reatividade, não é encontrado livre na natureza.
+                </p>
+                <p class="text-sm font-light leading-relaxed">
+                    A principal fonte mineral para extração é a <strong>cromita</strong> (FeCr₂O₄). As maiores reservas mundiais estão na África do Sul, Cazaquistão, Índia e Turquia. No Brasil, os depósitos concentram-se na Bahia e no Amapá.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO D: USO NO COTIDIANO -->
+    <section id="cotidiano" class="py-24 px-8 md:px-20 bg-[#0d1217]">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-serif text-white mb-16 text-center">D. Uso no Cotidiano</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group img-holder relative h-80 bg-black overflow-hidden border border-white/5" tabindex="0" data-label="Aço inoxidável">
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cutlery_designed_by_Zaha_Hadid_for_company_WMF,_2007_N.4.jpg?width=800"
+                         data-local="images/uso-aco-inox.jpg" onerror="imgFail(this)" alt="Talheres de aço inoxidável" loading="lazy"
+                         class="absolute inset-0 w-full h-full object-cover opacity-40 md:opacity-30 group-hover:opacity-60 group-focus:opacity-60 transition duration-500">
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-black/90 to-transparent">
+                        <h3 class="text-white font-serif text-xl mb-2">Aço Inoxidável</h3>
+                        <p class="text-xs font-light text-gray-400 md:opacity-0 md:translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 group-focus:opacity-100 group-focus:translate-y-0 transition duration-500">O cromo forma uma camada protetora microscópica que evita a oxidação do ferro em talheres e pias.</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="group img-holder relative h-80 bg-black overflow-hidden border border-white/5" tabindex="0" data-label="Revestimento cromado">
+                    <img src="images/uso-revestimento.png"
+                         data-local="images/uso-revestimento.jpg" onerror="imgFail(this)" alt="Peça automotiva cromada" loading="lazy"
+                         class="absolute inset-0 w-full h-full object-cover opacity-40 md:opacity-30 group-hover:opacity-60 group-focus:opacity-60 transition duration-500">
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-black/90 to-transparent">
+                        <h3 class="text-white font-serif text-xl mb-2">Revestimento</h3>
+                        <p class="text-xs font-light text-gray-400 md:opacity-0 md:translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 group-focus:opacity-100 group-focus:translate-y-0 transition duration-500">Peças automotivas recebem eletrodeposição de cromo para acabamento espelhado e proteção.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="group img-holder relative h-80 bg-black overflow-hidden border border-white/5" tabindex="0" data-label="Pigmento verde de cromo">
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chromium(III)-oxide-sample.jpg?width=800"
+                         data-local="images/uso-quimica-textil.jpg" onerror="imgFail(this)" alt="Amostras de óxido de cromo (III), pigmento verde" loading="lazy"
+                         class="absolute inset-0 w-full h-full object-cover opacity-40 md:opacity-30 group-hover:opacity-60 group-focus:opacity-60 transition duration-500">
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-black/90 to-transparent">
+                        <h3 class="text-white font-serif text-xl mb-2">Química &amp; Têxtil</h3>
+                        <p class="text-xs font-light text-gray-400 md:opacity-0 md:translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 group-focus:opacity-100 group-focus:translate-y-0 transition duration-500">Sais de cromo são empregados no tratamento do couro e o óxido na produção de pigmentos verdes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO E: IMPORTÂNCIA E RISCOS -->
+    <section id="riscos" class="py-24 px-8 md:px-20 max-w-7xl mx-auto">
+        <h2 class="text-3xl font-serif text-white mb-12 text-center">E. Importância ou Riscos</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-white/5 rounded-sm overflow-hidden">
+            <!-- Lado Positivo -->
+            <div class="p-10 md:p-16 bg-[#0a0f12] flex flex-col justify-center">
+                <span class="text-gray-500 text-xs uppercase tracking-widest mb-4">Cromo Trivalente (Cr³⁺)</span>
+                <h3 class="text-2xl font-serif text-white mb-4">Importância Biológica</h3>
+                <p class="text-sm font-light text-gray-400 leading-relaxed">
+                    Em quantidades reduzidas, é um nutriente essencial para o corpo humano. Auxilia a ação da insulina no controle dos níveis de açúcar no sangue e no metabolismo de gorduras. É encontrado em nozes, brócolis e cereais integrais.
+                </p>
+            </div>
+            <!-- Lado Negativo -->
+            <div class="p-10 md:p-16 bg-[#111518] flex flex-col justify-center border-t md:border-t-0 md:border-l border-white/5">
+                <span class="text-red-400/70 text-xs uppercase tracking-widest mb-4 font-semibold">Cromo Hexavalente (Cr⁶⁺)</span>
+                <h3 class="text-2xl font-serif text-white mb-4">Riscos e Toxicidade</h3>
+                <p class="text-sm font-light text-gray-400 leading-relaxed mb-4">
+                    Altamente tóxicos, oxidantes e carcinogênicos. A inalação sem EPI adequado causa lesões e câncer de pulmão.
+                </p>
+                <p class="text-sm font-light text-gray-400 leading-relaxed">
+                    O descarte incorreto afeta severamente a água e a vida aquática. Indústrias devem realizar neutralização química.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DOCENTES: cards grandes com foto -->
+    <section id="docentes" class="py-24 px-8 bg-black/30 border-t border-white/5 text-center">
+        <h2 class="text-2xl font-serif text-white mb-14 uppercase tracking-[0.2em]">Docentes</h2>
+        <div class="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-16">
+            <!-- Professora 1 -->
+            <article class="w-full max-w-xs bg-[#0d1217] border border-white/10 rounded-lg overflow-hidden hover:border-white/25 transition-colors">
+                <!-- Coloque a foto em images/prof-elaine.jpg (proporção 3:4) -->
+                <div class="img-holder aspect-[3/4] w-full" data-label="Foto da professora Elaine">
+                    <img src="images/prof-elaine.jpg" onerror="imgFail(this)" alt="Foto da professora Elaine" class="w-full h-full object-cover">
+                </div>
+                <div class="py-6 px-4">
+                    <h3 class="text-white text-xl">Elaine</h3>
+                    <p class="text-[11px] text-gray-500 uppercase tracking-widest mt-2">Química / PAM</p>
+                </div>
+            </article>
+
+            <!-- Professor 2 -->
+            <article class="w-full max-w-xs bg-[#0d1217] border border-white/10 rounded-lg overflow-hidden hover:border-white/25 transition-colors">
+                <!-- Coloque a foto em images/prof-allan.jpg (proporção 3:4) -->
+                <div class="img-holder aspect-[3/4] w-full" data-label="Foto do professor Allan">
+                    <img src="images/prof-allan.jpg" onerror="imgFail(this)" alt="Foto do professor Allan" class="w-full h-full object-cover">
+                </div>
+                <div class="py-6 px-4">
+                    <h3 class="text-white text-xl">Allan</h3>
+                    <p class="text-[11px] text-gray-500 uppercase tracking-widest mt-2">PWII</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- SEÇÃO F: FONTES E RODAPÉ -->
+    <footer id="fontes" class="py-16 px-8 md:px-20 border-t border-white/5 bg-[#070b0e] flex flex-col md:flex-row justify-between items-center md:items-start gap-10">
+        <div class="max-w-xl">
+            <h2 class="text-xl font-serif text-white mb-6">F. Fontes Consultadas</h2>
+            <ul class="space-y-4 text-xs font-light text-gray-400">
+                <li>
+                    1. Conselho Regional de Química IV Região (CRQ-SP). <br>
+                    <a href="https://crqsp.org.br/tabelaperiodica" target="_blank" rel="noopener" class="text-gray-200 hover:text-white transition underline decoration-white/20 underline-offset-4">Acessar CRQ-SP</a>
+                </li>
+                <li>
+                    2. Revista Pesquisa FAPESP - Aplicações Tecnológicas.<br>
+                    <a href="https://revistapesquisa.fapesp.br" target="_blank" rel="noopener" class="text-gray-200 hover:text-white transition underline decoration-white/20 underline-offset-4">Acessar FAPESP</a>
+                </li>
+                <li>
+                    3. Tabela Periódica Completa - Informações.<br>
+                    <a href="https://www.tabelaperiodica.org/elemento/cromo" target="_blank" rel="noopener" class="text-gray-200 hover:text-white transition underline decoration-white/20 underline-offset-4">Acessar Tabelaperiodica.org</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="flex flex-col items-center gap-3">
+            <span class="text-[10px] uppercase tracking-widest text-gray-500">Acesse o Site</span>
+            <!-- QR Code: troque seu-site-aqui.com pela URL final do site -->
+            <div class="bg-white p-2 rounded-sm">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://seu-site-aqui.com" alt="QR Code do Site" class="w-20 h-20">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Se a imagem remota falhar, tenta a local (data-local); se também falhar, mostra o espaço identificado
+        function imgFail(el) {
+            if (el.dataset.local && !el.dataset.tried) {
+                el.dataset.tried = '1';
+                el.src = el.dataset.local;
+                return;
+            }
+            el.style.display = 'none';
+            el.parentElement.classList.add('img-missing');
+        }
+        // Menu mobile
+        const btn = document.getElementById('menuBtn');
+        const menu = document.getElementById('menuMobile');
+        function toggleMenu(open) {
+            menu.classList.toggle('hidden', !open);
+            btn.setAttribute('aria-expanded', open);
+            btn.textContent = open ? '×' : '≡';
+        }
+        btn.addEventListener('click', () => toggleMenu(menu.classList.contains('hidden')));
+        document.querySelectorAll('.menu-link').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+    </script>
+</body>
+</html>
